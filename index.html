@@ -1,14 +1,184 @@
 <!DOCTYPE html>
-    <head>
-        <title>Cole</title>
-    </head>
-    <body style="background-color: gainsboro; font-family: Verdana, Geneva, Tahoma, sans-serif;">
-        <h3 style="text-align: center;">Hello!</h3>
-        <h1 style="text-align: center;">I am Cole DenBleyker</h1>
-        <h3 style="text-align: center;">This website will soon serve many purposes</h3>
-        <h3 style="text-align: center;">but for now, will serve as a placeholder</h3>
-        <br></br>
-        <h4 style="text-align: center;">See you soon!</h4>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cole DenBleyker - Software Engineer</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+
+    <nav>
+        <div class="navbar-links">
+            <a href="#" onclick="showAbout()">About</a>
+            <a href="#" onclick="showProjects()">Projects</a>
+            <a href="https://github.com/syth" target="_blank">
+                <img src="resources/github-mark-white.png" alt="GitHub Logo" class="navbar-logo">
+            </a>
+            <a href="https://linkedin.com/in/coledenbleyker" target="_blank">
+                <img src="resources/In-White-96.png" alt="LinkedIn Logo" class="navbar-logo">
+            </a>
+        </div>
+        <!-- Responsive Navbar -->
+        <div class="navbar-icon" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <div class="navbar-menu" id="navbar-menu">
+            <a href="#" onclick="showAbout(); toggleMenu()">About</a>
+            <a href="#" onclick="showProjects(); toggleMenu()">Projects</a>
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Cole DenBleyker</h1>
+        <p>Software Engineering Student at Rochester Institute of Technology</p>
+    </header>
+
+    <div class="container">
+
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>Hi, I’m Cole DenBleyker, a second-year Software Engineering student at RIT!<br>
+                I am passionate about developing, planning, and maintaining code.<br>
+                Some of my skills are below, but I am always learning new ones.
+            </p>
+
+            <div class="skills-section">
+                <h3>Skills</h3>
         
-    </body>
+                <div class="collapsible">
+                    <button class="collapsible-btn">Programming Languages</button>
+                    <div class="content">
+                        <ul>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>C</li>
+                            <li>C#</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>SQL</li>
+                            <li>Angular</li>
+                            <li>React</li>
+                            <li>JavaFX</li>
+                            <li>tKinter</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="collapsible">
+                    <button class="collapsible-btn">Operating Systems</button>
+                    <div class="content">
+                        <ul>
+                            <li>Windows</li>
+                            <li>MacOS</li>
+                            <li>Linux/Unix</li>
+                            <li>Embedded Systems</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="collapsible">
+                    <button class="collapsible-btn">Programming Concepts</button>
+                    <div class="content">
+                        <ul>
+                            <li>Git</li>
+                            <li>GitHub</li>
+                            <li>Noun-verb analysis</li>
+                            <li>S.O.L.I.D.</li>
+                            <li>G.R.A.S.P</li>
+                            <li>Object Oriented Programming</li>
+                            <li>Object Oriented Design</li>
+                            <li>User Stories</li>
+                            <li>UML Design</li>
+                            <li>Sprint Planning</li>
+                            <li>Agile Development</li>
+                            <li>Scrum Development</li>
+                            <li>Code Review</li>
+                            <li>Model-View-ViewModel</li>
+                            <li>Design Patterns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>More About Me</h3>
+            <p>
+                Growing up, I was interested in solving puzzles, being passionate about technology,
+                and how things are made which all came together when I helped my dad build a new family computer 
+                in elementary school when our old one died. After taking some computer science courses in high school, 
+                I fell in love with programming, which was the combination of everything I was interested in! I was making applications 
+                from the ground up, there are several hundreds if not thousands of ways to “solve” the puzzle that would get my 
+                program to the desired results. When it was time to choose a major at RIT, I knew I wanted to be a Software Engineer major.</p>
+        </section>
+
+        <section id="projects" class="content-section" style="display:none;">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>Description of Project 1. Include technologies used, your role, and the outcome.</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>Description of Project 2. Include technologies used, your role, and the outcome.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('navbar-menu');
+            menu.classList.toggle('menu-expanded');
+
+            if (!menu.classList.contains('menu-expanded')) {
+                var sections = document.querySelectorAll('.menu-expanded');
+                sections.forEach(function(section) {
+                    section.style.display = 'none';
+                });
+            }
+        }
+
+        function showAbout() {
+            hideAllSections();
+            document.getElementById('about').style.display = 'block';
+        }
+
+        function showProjects() {
+            hideAllSections();
+            document.getElementById('projects').style.display = 'block';
+        }
+
+        function showLinks() {
+            hideAllSections();
+            document.getElementById('links').style.display = 'block';
+        }
+
+        function hideAllSections() {
+            var sections = document.getElementsByClassName('content-section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+        }
+
+        var coll = document.getElementsByClassName("collapsible-btn");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
 </html>
