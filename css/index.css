@@ -80,17 +80,50 @@ p {
 }
 
 .project {
-    margin-bottom: 2em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #8f73ba;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
 }
 
-.project h3 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-    color: #bca1e6;
+.project-name {
+    color: #8f73ba;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #8f73ba;
+    display: inline-block;
+    margin-right: 10px;
 }
 
-.project p {
-    color: #666;
+.project-details {
+    flex-grow: 1;
+    flex-basis: calc(50% - 10px); /* Adjust based on your design */
+}
+
+.project-screenshots {
+    flex-basis: calc(50% - 10px); /* Adjust based on your design */
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap onto multiple lines */
+    justify-content: space-between;
+}
+
+.project-screenshots img {
+    max-width: 100%; /* Set maximum width to container size */
+    height: auto;
+    max-height: 300px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 360px) {
+    .project {
+        flex-direction: column;
+    }
+    .project-screenshots img {
+        max-width: calc(50% - 10px); /* Adjust based on your design */
+    }
 }
 
 .contact-form {
@@ -216,7 +249,7 @@ a:hover {
     display: flex;
 }
 
-@media (max-width: 300px) {
+@media (max-width: 360px) {
     .navbar-links {
         display: none;
     }
@@ -236,7 +269,7 @@ a:hover {
     }
 }
 
-@media (min-width: 301px) {
+@media (min-width: 361px) {
     .navbar-icon {
         display: none;
     }
