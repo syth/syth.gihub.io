@@ -284,12 +284,13 @@ a:hover {
 }
 
 #pdfFrame {
-    border: none; /* Remove border */
+    border: none;
 }
 
 @media (max-width: 430px) {
     #pdfFrame {
-        height: 90vh; /* 90% of the viewport height */
-        overflow-y: scroll; /* Enable vertical scrolling if needed */
+        height: 300%;
+        width: 100%;
+        overflow-y: scroll;
     }
 }
