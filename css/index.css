@@ -282,3 +282,14 @@ a:hover {
         display: flex;
     }
 }
+
+#pdfFrame {
+    border: none; /* Remove border */
+}
+
+@media (max-width: 430px) {
+    #pdfFrame {
+        height: 90vh; /* 90% of the viewport height */
+        overflow-y: scroll; /* Enable vertical scrolling if needed */
+    }
+}
