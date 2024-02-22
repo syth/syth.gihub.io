@@ -211,6 +211,17 @@
             }
         }
 
+        // Render PDF page into canvas context
+        var renderContext = {
+            canvasContext: context,
+            viewport: viewport
+        };
+        page.render(renderContext).promise.then(function() {
+            // Set a fixed width for the canvas
+            canvas.width = 400; // Adjust the width as needed
+            document.getElementById('pdfFrame').appendChild(canvas);
+        });
+
         function showAbout() {
             hideAllSections();
             document.getElementById('about').style.display = 'block';
