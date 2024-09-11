@@ -70,7 +70,7 @@ h2 {
 
 h3 {
     text-align: center;
-    margin-top: 2em;
+    margin-top: 0.5em;
     padding-bottom: 1em;
 }
 
@@ -165,7 +165,7 @@ ul {
 }
 
 li {
-    margin-bottom: 1em;
+    margin-bottom: 0.35em;
 }
 
 a {
